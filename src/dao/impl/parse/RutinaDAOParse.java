@@ -1,46 +1,72 @@
-package dao.impl;
+package dao.impl.parse;
 
-import dao.RegistroEjercicioDAO;
-import model.RegistroEjercicio;
+import dao.RutinaDAO;
+import model.Rutina;
+import service.Back4AppConnection;
+
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RegistroEjercicioDAOCollection implements RegistroEjercicioDAO {
-
-    private List<RegistroEjercicio> registros = new ArrayList<>();
+public class RutinaDAOParse implements RutinaDAO {
 
     @Override
-    public void crear(RegistroEjercicio registro) {
-        registros.add(registro);
+    public void crear(Rutina rutina) {
+
+        try {
+
+            HttpURLConnection conn = Back4AppConnection.conectar("Rutina", "POST");
+
+            String json = "{ \"nombre\": \"" + rutina.getNombre() + "\" }";
+
+            OutputStream os = conn.getOutputStream();
+            os.write(json.getBytes());
+            os.flush();
+
+            System.out.println("Rutina guardada en Back4App");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
     @Override
-    public RegistroEjercicio obtener(int id) {
-        for (RegistroEjercicio r : registros) {
-            if (r.getIdRegistro() == id) {
-                return r;
-            }
-        }
+    public Rutina obtener(int id) {
+
+        System.out.println("GET rutina no implementado todavía");
+
         return null;
     }
 
     @Override
-    public List<RegistroEjercicio> obtenerTodos() {
-        return registros;
+    public List<Rutina> obtenerTodas() {
+
+        try {
+
+            HttpURLConnection conn = Back4AppConnection.conectar("Rutina", "GET");
+
+            System.out.println("Consultando rutinas en Back4App");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return new ArrayList<>();
     }
 
     @Override
-    public void actualizar(RegistroEjercicio registro) {
-        for (int i = 0; i < registros.size(); i++) {
-            if (registros.get(i).getIdRegistro() == registro.getIdRegistro()) {
-                registros.set(i, registro);
-                break;
-            }
-        }
+    public void actualizar(Rutina rutina) {
+
+        System.out.println("Actualizar rutina no implementado");
+
     }
 
     @Override
     public void eliminar(int id) {
-        registros.removeIf(r -> r.getIdRegistro() == id);
+
+        System.out.println("Eliminar rutina no implementado");
+
     }
 }
