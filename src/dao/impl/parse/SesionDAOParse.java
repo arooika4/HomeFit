@@ -2,46 +2,52 @@ package dao.impl.parse;
 
 import dao.SesionDAO;
 import model.Sesion;
+import service.Back4AppConnection;
 
-import java.util.List;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
 import java.util.ArrayList;
+import java.util.List;
 
 public class SesionDAOParse implements SesionDAO {
 
     @Override
     public void crear(Sesion sesion) {
 
-        System.out.println("Creando sesión en Back4App");
+        try {
+
+            HttpURLConnection conn = Back4AppConnection.conectar("Sesion", "POST");
+
+            String json = "{ \"fecha\": \"" + sesion.getFecha() + "\" }";
+
+            OutputStream os = conn.getOutputStream();
+            os.write(json.getBytes());
+            os.flush();
+
+            System.out.println("Sesion guardada en Back4App");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 
     @Override
     public Sesion obtener(int id) {
-
-        System.out.println("Obteniendo sesión");
-
         return null;
     }
 
     @Override
     public List<Sesion> obtenerTodas() {
 
-        System.out.println("Listando sesiones");
+        System.out.println("GET sesiones");
 
         return new ArrayList<>();
     }
 
     @Override
-    public void actualizar(Sesion sesion) {
-
-        System.out.println("Actualizando sesión");
-
-    }
+    public void actualizar(Sesion sesion) {}
 
     @Override
-    public void eliminar(int id) {
-
-        System.out.println("Eliminando sesión");
-
-    }
+    public void eliminar(int id) {}
 }
