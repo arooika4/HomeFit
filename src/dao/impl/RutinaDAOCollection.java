@@ -1,4 +1,4 @@
-package daoimpl;
+package dao.impl;
 
 import dao.RutinaDAO;
 import model.Rutina;
