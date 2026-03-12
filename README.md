@@ -10,25 +10,36 @@ Imagen o explicación del flujo por consola.
 ### 3. Modelo de datos
 #### RUTINA
 int id_rutina (PK)
+
 String nombre
 
 #### EJERCICIO
 int id_ejercicio (PK)
+
 String nombre
+
 String descripcion
+
 String referencia
+
 int id_rutina (FK)
 
 #### SESION
 int id_sesion (PK)
+
 Date fecha
 
 #### REGISTRO_EJERCICIO
 int id_registro (PK)
+
 int tiempo
+
 int nivel
+
 String referencia
+
 int id_sesion (FK)
+
 int id_ejercicio (FK)
 
 ### 4. Arquitectura
