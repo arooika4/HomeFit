@@ -1,0 +1,54 @@
+# === ARCHIVOS DE CONFIGURACIÓN SENSIBLES (¡NO SUBIR NUNCA!) ===
+# Claves de Back4App y configuraciones locales
+/config.properties
+/src/main/resources/config.properties
+*.properties
+!*.EJEMPLO
+!*.ejemplo
+
+# === NETBEANS (IDE) ===
+/nbproject/private/
+/build/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+/.nb-gradle-properties/
+**/nbproject/private/
+**/.nb-gradle/
+
+# === ARCHIVOS COMPILADOS DE JAVA ===
+*.class
+/target/
+/classes/
+*.jar
+*.war
+*.ear
+/.mvn/
+
+# === ARCHIVOS DEL SISTEMA ===
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+*.tmp
+*.temp
+
+# === ARCHIVOS DE PROYECTO DE NETBEANS (PERO MANTENER LOS IMPORTANTES) ===
+# Estos archivos SÍ deberían ir en el repo para que todos tengan la misma configuración:
+# nbproject/project.properties
+# nbproject/project.xml
+# nbproject/build-impl.xml
+
+# === ARCHIVOS DE CONFIGURACIÓN DE GIT ===
+*.orig
+*.rej
+
+# === CARPETAS DE DOCUMENTACIÓN TEMPORAL ===
+/docs/_build/
+/docs/api/
+
+# === ARCHIVOS DE RESPALDO ===
+*~
+*.bak
+*.swp
