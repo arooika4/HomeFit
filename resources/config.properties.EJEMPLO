@@ -1,0 +1,12 @@
+# CONFIGURACIÓN PARA BACK4APP
+# Copia este archivo como "config.properties" y rellena con tus claves
+# NUNCA subas el archivo config.properties real a GitHub
+
+# Application ID de tu proyecto en Back4App
+back4app.app.id=AQUI_PON_TU_APPLICATION_ID
+
+# Client Key de tu proyecto en Back4App
+back4app.client.key=AQUI_PON_TU_CLIENT_KEY
+
+# URL del servidor de Back4App (no cambiar)
+back4app.server.url=https://parseapi.back4app.com
