@@ -2,6 +2,7 @@
 # Claves de Back4App y configuraciones locales
 /config.properties
 /src/main/resources/config.properties
+resources/config.properties
 *.properties
 !*.EJEMPLO
 !*.ejemplo
