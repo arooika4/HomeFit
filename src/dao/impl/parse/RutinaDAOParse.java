@@ -15,7 +15,6 @@ public class RutinaDAOParse implements RutinaDAO {
     public void crear(Rutina rutina) {
 
         try {
-
             HttpURLConnection conn = Back4AppConnection.conectar("Rutina", "POST");
 
             String json = "{ \"nombre\": \"" + rutina.getNombre() + "\" }";
@@ -34,9 +33,7 @@ public class RutinaDAOParse implements RutinaDAO {
 
     @Override
     public Rutina obtener(int id) {
-
         System.out.println("GET rutina no implementado todavía");
-
         return null;
     }
 
@@ -44,7 +41,6 @@ public class RutinaDAOParse implements RutinaDAO {
     public List<Rutina> obtenerTodas() {
 
         try {
-
             HttpURLConnection conn = Back4AppConnection.conectar("Rutina", "GET");
 
             System.out.println("Consultando rutinas en Back4App");
@@ -58,14 +54,12 @@ public class RutinaDAOParse implements RutinaDAO {
 
     @Override
     public void actualizar(Rutina rutina) {
-
         System.out.println("Actualizar rutina no implementado");
 
     }
 
     @Override
     public void eliminar(int id) {
-
         System.out.println("Eliminar rutina no implementado");
 
     }

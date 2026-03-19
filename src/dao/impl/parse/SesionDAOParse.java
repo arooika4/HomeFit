@@ -3,7 +3,6 @@ package dao.impl.parse;
 import dao.SesionDAO;
 import model.Sesion;
 import service.Back4AppConnection;
-
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.util.ArrayList;
@@ -15,7 +14,6 @@ public class SesionDAOParse implements SesionDAO {
     public void crear(Sesion sesion) {
 
         try {
-
             HttpURLConnection conn = Back4AppConnection.conectar("Sesion", "POST");
 
             String json = "{ \"fecha\": \"" + sesion.getFecha() + "\" }";
@@ -39,9 +37,7 @@ public class SesionDAOParse implements SesionDAO {
 
     @Override
     public List<Sesion> obtenerTodas() {
-
         System.out.println("GET sesiones");
-
         return new ArrayList<>();
     }
 

@@ -3,7 +3,6 @@ package dao.impl.parse;
 import dao.EjercicioDAO;
 import model.Ejercicio;
 import service.Back4AppConnection;
-
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.util.ArrayList;
@@ -13,9 +12,7 @@ public class EjercicioDAOParse implements EjercicioDAO {
 
     @Override
     public void crear(Ejercicio ejercicio) {
-
         try {
-
             HttpURLConnection conn = Back4AppConnection.conectar("Ejercicio", "POST");
 
             String json =
@@ -43,9 +40,7 @@ public class EjercicioDAOParse implements EjercicioDAO {
 
     @Override
     public List<Ejercicio> obtenerTodos() {
-
         System.out.println("GET ejercicios");
-
         return new ArrayList<>();
     }
 
