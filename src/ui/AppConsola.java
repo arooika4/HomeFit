@@ -23,12 +23,10 @@ public class AppConsola {
         String ejercicio;
         String tiempo;
         String fecha;
-        String notas;
         RegistroSesion(String ejercicio, String tiempo, String fecha) {
             this.ejercicio = ejercicio;
             this.tiempo    = tiempo;
             this.fecha     = fecha;
-            this.notas     = "";
         }
     }
     private final List<RegistroSesion> historial = new ArrayList<>();
